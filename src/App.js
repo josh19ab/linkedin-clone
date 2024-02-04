@@ -5,8 +5,6 @@ import Header from './Header';
 function App() {
   return (
     <div className="app">
-      
-      {/* header */}
       <Header />
 
       {/* app body */}
@@ -15,6 +13,7 @@ function App() {
         {/* widgets */}
       
     </div>
+  
   );
 }
 
