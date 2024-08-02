@@ -7,12 +7,15 @@ import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Post from './Post';
-
+import FlipMove from 'react-flip-move';
 import { onSnapshot , collection, addDoc, serverTimestamp, query, orderBy} from 'firebase/firestore';
 import db from './firebase';
+import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
 
 
 function Feed() {
+  const user = useSelector(selectUser)
   const [input, setInput] = useState('');
   const [posts, setPosts] = useState([]);
 
@@ -29,12 +32,12 @@ useEffect(
 const sendPost = async (e) => {
   e.preventDefault();
 
-  const collectionRef = collection(db,"posts");
+ const collectionRef = collection(db,"posts");
   const payload = {
-    name: 'Joshua Abraham',
-    description: 'this is a test',
+    name: user.displayName,
+    description: user.email,
     message: input,
-    photoUrl: '',
+    photoUrl: user.photoUrl || "",
     timestamp: serverTimestamp()
   };
   addDoc(collectionRef, payload);
@@ -61,7 +64,8 @@ const sendPost = async (e) => {
         </div>
       </div>
 
-      {/* Posts */}
+    {/* Posts */}
+    <FlipMove>
       {posts.map((posts) => (
         <Post
           key={posts.id}
@@ -72,6 +76,8 @@ const sendPost = async (e) => {
           timestamp={posts.timestamp}
         />
       ))}
+    </FlipMove>
+      
     </div>
   );
 }
