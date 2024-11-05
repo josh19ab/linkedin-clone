@@ -42,3 +42,48 @@
     justify-content: space-evenly;
     
 }
+
+.loading {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.media-preview {
+  position: relative; /* Position relative for absolute positioning of close button */
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 15px;
+  
+}
+
+.uploaded-media {
+  max-width: 15%; /* Make it responsive */
+  height: 50%; /* Maintain aspect ratio */
+}
+
+.close-button {
+  position: absolute; /* Position it absolutely within the parent */  
+  background-color: rgba(255, 0, 0, 0.7); /* Semi-transparent red background */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px; /* Size of the button */
+  height: 30px; /* Size of the button */
+  cursor: pointer;
+}
+
+.media-preview:hover .uploaded-media {
+   filter: brightness(70%); /* Darken image on hover */
+}
+
+.media-preview:hover .close-button {
+   opacity: 1; /* Show close button on hover */
+   transition: opacity .3s ease; /* Smooth transition for opacity */
+}
+
+/* Initially hide the close button until hover */
+.close-button {
+   opacity: .7; /* Slightly transparent initially */
+   transition: opacity .3s ease; /* Smooth transition for opacity */
+}

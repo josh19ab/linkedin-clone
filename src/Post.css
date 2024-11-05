@@ -33,3 +33,11 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+.post__media {
+  width: 100%;
+  max-width: 600px; 
+  height: auto; 
+  margin-top: 10px; 
+  border-radius: 8px; 
+}
