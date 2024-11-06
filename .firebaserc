@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "linkedin-clone-e4949"
-  }
+    "default": "linkedin-clone-e4949",
+    "linkedin-clone": "linkedin-clone-e4949"
+  },
+  "targets": {},
+  "etags": {}
 }

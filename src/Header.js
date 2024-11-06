@@ -25,7 +25,7 @@ function Header() {
     <div className='header'>
 
         <div className="header_left">
-          <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="error" />
+          <img src="/linkedin.svg" alt="error" />
 
           <div className="header_search">
             <SearchIcon />
